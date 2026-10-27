@@ -5,7 +5,7 @@
 
 ## 🌟 Overview
 
-**SYSMIN Logs** is a lightweight, zero-dependency web dashboard paired with a native PowerShell HTTP collector agent. It is designed to bridge the gap between cryptic Windows Event Logs and instant operational clarity. 
+**SYSMIN Logs** is a lightweight, Completely Offline zero-dependency web dashboard paired with a native PowerShell HTTP collector agent. It is designed to bridge the gap between cryptic Windows Event Logs and instant operational clarity. 
 
 Whether you are investigating unexpected reboots, brute-force login attempts, low RAM conditions, or service crashes, SYSMIN translates Windows Event IDs (1–65535) and Hex error codes into clear **Plain-English** explanations accompanied by **1-click Google remediation searches** and **ready-to-run PowerShell fix commands**.
 
