@@ -54,7 +54,7 @@
         <div>
           <div class="flex items-center gap-2">
             <h1 class="text-base lg:text-lg font-extrabold tracking-tight text-slate-900 dark:text-white">SYSMIN Logs</h1>
-            <span class="text-[10px] font-bold uppercase px-2 py-0.5 rounded-md bg-blue-100 text-blue-700 dark:bg-blue-500/15 dark:text-blue-400 border border-blue-200 dark:border-blue-500/30">v4.0</span>
+            <span class="text-[10px] font-bold uppercase px-2 py-0.5 rounded-md bg-blue-100 text-blue-700 dark:bg-blue-500/15 dark:text-blue-400 border border-blue-200 dark:border-blue-500/30">v4.5</span>
           </div>
           <p class="text-xs font-medium text-slate-500 dark:text-slate-400">Easy Server Logs.</p>
         </div>
@@ -83,7 +83,6 @@
 
       <!-- ACTION TOOLBAR -->
       <div class="flex flex-wrap items-center gap-2">
-        <!-- Live Auto-Sync Selector -->
         <div class="flex items-center bg-slate-100 dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700 rounded-xl px-2.5 py-1.5 text-xs">
           <svg class="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 mr-1.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
           <span class="text-slate-600 dark:text-slate-300 font-medium mr-1.5">Auto-Sync:</span>
@@ -122,7 +121,6 @@
           Export Report (<span id="unreportedCountBadge">0</span>)
         </button>
 
-        <!-- Theme Toggle Button -->
         <button id="btnThemeToggle" title="Switch Dark / Light Mode" class="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 transition">
           <svg id="themeIconSun" class="w-4 h-4 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path stroke-linecap="round" d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
           <svg id="themeIconMoon" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
@@ -155,7 +153,7 @@
         <!-- Category Filter Pills -->
         <div class="flex flex-wrap items-center gap-1.5" id="domainPillsContainer">
           <button data-domain="ALL" class="domain-pill active px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-blue-600 text-white transition">All Categories</button>
-          <button data-domain="Auth & Security" class="domain-pill px-2.5 py-1.5 rounded-lg text-xs font-medium bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 transition">Auth &amp; AD</button>
+          <button data-domain="Auth & Security" class="domain-pill px-2.5 py-1.5 rounded-lg text-xs font-medium bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 transition">Auth, Logon &amp; Logoff</button>
           <button data-domain="Disk & Kernel" class="domain-pill px-2.5 py-1.5 rounded-lg text-xs font-medium bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 transition">Disk &amp; Kernel</button>
           <button data-domain="Services & GPO" class="domain-pill px-2.5 py-1.5 rounded-lg text-xs font-medium bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 transition">Services &amp; GPO</button>
           <button data-domain="Network & Firewall" class="domain-pill px-2.5 py-1.5 rounded-lg text-xs font-medium bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 transition">Network &amp; DNS</button>
@@ -225,7 +223,7 @@
     <section class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-3 flex flex-wrap items-center justify-between gap-3 shadow-sm">
       <div class="flex flex-wrap items-center gap-2 flex-1 min-w-[260px]">
         <div class="relative flex-1 min-w-[220px]">
-          <input id="searchInput" type="text" placeholder="Filter by Event ID, hostname, user, IP, service, or error code..." class="w-full bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-800 focus:border-blue-500 rounded-xl pl-9 pr-4 py-2 text-xs text-slate-900 dark:text-white placeholder-slate-400 outline-none transition" />
+          <input id="searchInput" type="text" placeholder="Search by Username, Client Hostname, IP, Event ID (4624, 4634), or Service..." class="w-full bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-800 focus:border-blue-500 rounded-xl pl-9 pr-4 py-2 text-xs text-slate-900 dark:text-white placeholder-slate-400 outline-none transition" />
           <svg class="w-3.5 h-3.5 absolute left-3 top-2.5 text-slate-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
         </div>
 
@@ -245,7 +243,7 @@
           <option value="Security">Security</option>
           <option value="System">System</option>
           <option value="Application">Application</option>
-          <option value="Other">Operational (DNS, PS, Defender)</option>
+          <option value="Other">Operational (RDP, PS, Defender)</option>
         </select>
 
         <select id="timeRangeFilter" class="bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-800 rounded-xl px-3 py-2 text-xs text-slate-800 dark:text-slate-200 outline-none">
@@ -276,7 +274,7 @@
       <!-- Left Column: Event Stream -->
       <div class="lg:col-span-7 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl flex flex-col overflow-hidden shadow-sm">
         <div class="px-4 py-3 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
-          <h2 class="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300">Event Feed</h2>
+          <h2 class="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300">Event Feed (User, Client Host &amp; Service Details)</h2>
           <span class="text-[11px] text-slate-500 dark:text-slate-400">Select any entry for full diagnostics</span>
         </div>
 
@@ -295,7 +293,7 @@
             <svg class="w-10 h-10 mb-3 stroke-slate-400 dark:stroke-slate-600" fill="none" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
             <p class="text-sm font-semibold text-slate-700 dark:text-slate-300">No Event Selected</p>
             <p class="text-xs max-w-sm mt-1">
-              Click an event from the feed to view its root-cause breakdown, remediation steps, and PowerShell commands.
+              Click an event from the feed to view extracted Usernames, Client Hostnames, Source IPs, Logon Types, and PowerShell commands.
             </p>
           </div>
         </div>
@@ -315,14 +313,12 @@
         <button data-close-modal="serversModal" class="text-slate-400 hover:text-slate-700 dark:hover:text-white text-xl font-bold px-2">&times;</button>
       </div>
 
-      <!-- Add New Server Form -->
       <div class="grid grid-cols-1 sm:grid-cols-12 gap-2 text-xs">
         <input id="newServerName" type="text" placeholder="Label (e.g. DC-01, SQL-PROD)" class="sm:col-span-4 bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-700 rounded-xl px-3 py-2 text-slate-900 dark:text-white outline-none focus:border-blue-500" />
         <input id="newServerUrl" type="text" placeholder="http://192.168.1.50:8080" class="sm:col-span-6 bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-700 rounded-xl px-3 py-2 text-slate-900 dark:text-white font-mono outline-none focus:border-blue-500" />
         <button id="btnAddServerNode" class="sm:col-span-2 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-xl px-3 py-2 transition">Add Node</button>
       </div>
 
-      <!-- Server List -->
       <div id="serverNodesList" class="divide-y divide-slate-200 dark:divide-slate-800 max-h-64 overflow-y-auto border border-slate-200 dark:border-slate-800 rounded-xl"></div>
 
       <div class="flex justify-between items-center pt-2">
@@ -335,13 +331,13 @@
     </div>
   </div>
 
-  <!-- MODAL 2: DYNAMIC MULTI-FORMAT REPORT EXPORTER (PDF / CSV / HTML) -->
+  <!-- MODAL 2: DYNAMIC MULTI-FORMAT REPORT EXPORTER -->
   <div id="reportModal" class="fixed inset-0 z-50 hidden bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
     <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-2xl max-w-lg w-full p-5 shadow-2xl space-y-4">
       <div class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-3">
         <div>
           <h3 class="text-base font-bold text-slate-900 dark:text-white">Export Incremental Log Report</h3>
-          <p class="text-xs text-slate-500 dark:text-slate-400">Only new, unreported logs are exported to prevent duplicate files and wasted disk space.</p>
+          <p class="text-xs text-slate-500 dark:text-slate-400">Includes extracted Usernames, Client Hostnames, Source IPs, and Remediation steps.</p>
         </div>
         <button data-close-modal="reportModal" class="text-slate-400 hover:text-slate-700 dark:hover:text-white text-xl font-bold px-2">&times;</button>
       </div>
@@ -362,7 +358,7 @@
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
           <button data-export-format="PDF" class="export-format-btn p-3 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-blue-500 dark:hover:border-blue-500 bg-slate-50 dark:bg-slate-950 text-left transition flex flex-col justify-between">
             <span class="text-xs font-extrabold text-rose-600 dark:text-rose-400">PDF Document</span>
-            <span class="text-[11px] text-slate-500 dark:text-slate-400 mt-1">Formatted executive summary with KPI cards &amp; table</span>
+            <span class="text-[11px] text-slate-500 dark:text-slate-400 mt-1">Formatted executive summary with User &amp; Host columns</span>
           </button>
 
           <button data-export-format="HTML" class="export-format-btn p-3 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-blue-500 dark:hover:border-blue-500 bg-slate-50 dark:bg-slate-950 text-left transition flex flex-col justify-between">
@@ -372,7 +368,7 @@
 
           <button data-export-format="CSV" class="export-format-btn p-3 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-blue-500 dark:hover:border-blue-500 bg-slate-50 dark:bg-slate-950 text-left transition flex flex-col justify-between">
             <span class="text-xs font-extrabold text-emerald-600 dark:text-emerald-400">CSV Spreadsheet</span>
-            <span class="text-[11px] text-slate-500 dark:text-slate-400 mt-1">Structured columns for Excel, audit archives, or SIEM</span>
+            <span class="text-[11px] text-slate-500 dark:text-slate-400 mt-1">Includes User, Client Host, Source IP &amp; Logon Type columns</span>
           </button>
         </div>
       </div>
@@ -388,9 +384,9 @@
     <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-2xl max-w-3xl w-full max-h-[90vh] flex flex-col shadow-2xl overflow-hidden">
       <div class="px-5 py-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
         <div>
-          <h3 class="text-base font-bold text-slate-900 dark:text-white">SYSMIN Windows Server PowerShell Listener</h3>
+          <h3 class="text-base font-bold text-slate-900 dark:text-white">SYSMIN Windows Server PowerShell Listener (Deep XML Extractor)</h3>
           <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-            Run in an elevated PowerShell session on each Windows Server you want to monitor.
+            Extracts TargetUserName, WorkstationName, IpAddress, LogonType, ServiceName, and ProcessName directly from Event XML.
           </p>
         </div>
         <button data-close-modal="serverScriptModal" class="text-slate-400 hover:text-slate-700 dark:hover:text-white text-xl font-bold px-2">&times;</button>
@@ -408,13 +404,13 @@
         </div>
 
         <div class="flex items-center justify-between">
-          <span class="font-semibold text-slate-700 dark:text-slate-300">Listener Script (Port 8080 — LAN &amp; Localhost Ready)</span>
+          <span class="font-semibold text-slate-700 dark:text-slate-300">Listener Script (Port 8080 — Extracts User &amp; Hostname XML Fields)</span>
           <button id="btnCopyPsAgent" class="px-3.5 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-semibold transition">
             Copy PowerShell Script
           </button>
         </div>
 
-        <pre id="psAgentCodeBlock" class="bg-slate-950 border border-slate-800 rounded-xl p-4 text-[11px] text-emerald-300 overflow-x-auto leading-relaxed select-all font-mono"># # SYSMIN Logs - Fast Multi-Binding Windows Server HTTP Agent
+        <pre id="psAgentCodeBlock" class="bg-slate-950 border border-slate-800 rounded-xl p-4 text-[11px] text-emerald-300 overflow-x-auto leading-relaxed select-all font-mono"># SYSMIN Logs - Deep Entity Extraction Windows Server HTTP Agent
 $IsAdmin = ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
 $Port = 8080
 
@@ -441,17 +437,12 @@ try {
 Write-Host "=====================================================" -ForegroundColor DarkCyan
 Write-Host "SYSMIN Agent Active on $ServerHostname (${ServerIP}:$Port)" -ForegroundColor Green
 Write-Host "Local URL : http://localhost:$Port/api/logs" -ForegroundColor Cyan
-if ($IsAdmin) {
-    Write-Host "LAN URL   : http://${ServerIP}:$Port/api/logs (Admin Mode)" -ForegroundColor Cyan
-} else {
-    Write-Host "NOTE      : Running without Admin rights. Use http://localhost:$Port in the portal." -ForegroundColor Yellow
-}
 Write-Host "=====================================================" -ForegroundColor DarkCyan
 
 $Channels = @(
+  'Security',
   'System',
   'Application',
-  'Security',
   'Microsoft-Windows-PowerShell/Operational',
   'Microsoft-Windows-Windows Defender/Operational',
   'Microsoft-Windows-TerminalServices-LocalSessionManager/Operational',
@@ -464,7 +455,6 @@ while ($Listener.IsListening) {
     $Request = $Context.Request
     $Response = $Context.Response
 
-    # Full Browser CORS + Chrome/Edge Private Network Access Headers
     $Response.Headers.Add("Access-Control-Allow-Origin", "*")
     $Response.Headers.Add("Access-Control-Allow-Methods", "GET, OPTIONS")
     $Response.Headers.Add("Access-Control-Allow-Headers", "*")
@@ -477,17 +467,31 @@ while ($Listener.IsListening) {
     }
 
     if ($Request.Url.AbsolutePath -eq "/api/logs") {
-        Write-Host "[$(Get-Date -Format 'HH:mm:ss')] Sync request received from browser! Collecting logs..." -ForegroundColor Yellow
+        Write-Host "[$(Get-Date -Format 'HH:mm:ss')] Sync request received! Extracting logs & user/host details..." -ForegroundColor Yellow
         $AllEvents = New-Object System.Collections.Generic.List[object]
 
         foreach ($Ch in $Channels) {
             try {
-                $RawEvents = Get-WinEvent -LogName $Ch -MaxEvents 20 -ErrorAction Stop
+                $RawEvents = Get-WinEvent -LogName $Ch -MaxEvents 25 -ErrorAction Stop
                 foreach ($Ev in $RawEvents) {
                     $TimeIso = if ($Ev.TimeCreated) { $Ev.TimeCreated.ToString("yyyy-MM-ddTHH:mm:ss.fffzzz") } else { (Get-Date).ToString("o") }
                     $TimeDisp = if ($Ev.TimeCreated) { $Ev.TimeCreated.ToString("dd MMM yyyy, hh:mm:ss tt") } else { (Get-Date).ToString("dd MMM yyyy, hh:mm:ss tt") }
                     $MsgText = try { $Ev.Message } catch { $null }
-                    if (-not $MsgText) { $MsgText = "Event ID $($Ev.Id) logged by $($Ev.ProviderName) in $($Ev.LogName)." }
+
+                    $XmlMap = @{}
+                    try {
+                        $XmlDoc = [xml]$Ev.ToXml()
+                        foreach ($DataNode in $XmlDoc.Event.EventData.Data) {
+                            if ($DataNode.Name -and $DataNode.'#text') {
+                                $XmlMap[$DataNode.Name] = $DataNode.'#text'
+                            }
+                        }
+                    } catch {}
+
+                    if (-not $MsgText) {
+                        $Pairs = ($XmlMap.GetEnumerator() | ForEach-Object { "$($_.Key): $($_.Value)" }) -join " | "
+                        $MsgText = if ($Pairs) { "Event ID $($Ev.Id) - $Pairs" } else { "Event ID $($Ev.Id) logged by $($Ev.ProviderName) in $($Ev.LogName)." }
+                    }
 
                     $AllEvents.Add([PSCustomObject]@{
                         Id               = $Ev.Id
@@ -501,12 +505,13 @@ while ($Listener.IsListening) {
                         MachineName      = $ServerHostname
                         ServerIP         = $ServerIP
                         Message          = $MsgText
+                        EventData        = $XmlMap
                     })
                 }
             } catch {
                 if ($Ch -in @('System', 'Application', 'Security')) {
                     try {
-                        $FallbackEvents = Get-EventLog -LogName $Ch -Newest 20 -ErrorAction Stop
+                        $FallbackEvents = Get-EventLog -LogName $Ch -Newest 25 -ErrorAction Stop
                         foreach ($Ev in $FallbackEvents) {
                             $TimeIso = if ($Ev.TimeGenerated) { $Ev.TimeGenerated.ToString("yyyy-MM-ddTHH:mm:ss.fffzzz") } else { (Get-Date).ToString("o") }
                             $TimeDisp = if ($Ev.TimeGenerated) { $Ev.TimeGenerated.ToString("dd MMM yyyy, hh:mm:ss tt") } else { (Get-Date).ToString("dd MMM yyyy, hh:mm:ss tt") }
@@ -522,6 +527,7 @@ while ($Listener.IsListening) {
                                 MachineName      = $ServerHostname
                                 ServerIP         = $ServerIP
                                 Message          = $Ev.Message
+                                EventData        = @{ UserName = $Ev.UserName }
                             })
                         }
                     } catch {}
@@ -529,7 +535,7 @@ while ($Listener.IsListening) {
             }
         }
 
-        Write-Host "[$(Get-Date -Format 'HH:mm:ss')] Success! Sent $($AllEvents.Count) logs to SYSMIN Portal." -ForegroundColor Green
+        Write-Host "[$(Get-Date -Format 'HH:mm:ss')] Sent $($AllEvents.Count) detailed logs to SYSMIN Portal." -ForegroundColor Green
 
         $Payload = @{
             status    = "connected"
@@ -538,7 +544,7 @@ while ($Listener.IsListening) {
             isAdmin   = $IsAdmin
             timestamp = (Get-Date).ToString("o")
             logs      = $AllEvents
-        } | ConvertTo-Json -Depth 4 -Compress
+        } | ConvertTo-Json -Depth 5 -Compress
 
         $Buffer = [System.Text.Encoding]::UTF8.GetBytes($Payload)
         $Response.ContentType = "application/json; charset=utf-8"
@@ -568,7 +574,7 @@ while ($Listener.IsListening) {
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
         <div>
           <label class="block text-slate-500 dark:text-slate-400 mb-1 font-medium">Event ID</label>
-          <input id="manualEventIdInput" type="number" placeholder="e.g. 4625, 41, 7036" class="w-full bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-700 rounded-xl px-3 py-2 text-slate-900 dark:text-white outline-none focus:border-blue-500" />
+          <input id="manualEventIdInput" type="number" placeholder="e.g. 4624, 4634, 4625" class="w-full bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-700 rounded-xl px-3 py-2 text-slate-900 dark:text-white outline-none focus:border-blue-500" />
         </div>
         <div>
           <label class="block text-slate-500 dark:text-slate-400 mb-1 font-medium">Channel</label>
@@ -624,6 +630,100 @@ while ($Listener.IsListening) {
       autoSyncTimerId: null
     };
 
+    /*************************************************************************
+     * 1. LOGON TYPE NAMES & DEEP ENTITY EXTRACTOR (USER, HOSTNAME, IP, SERVICE)
+     *************************************************************************/
+    const LOGON_TYPE_LABELS = {
+      "2": "Interactive (Local Console)",
+      "3": "Network (SMB / Shared Folder)",
+      "4": "Batch (Scheduled Task)",
+      "5": "Windows Service",
+      "7": "Screen Unlock",
+      "8": "NetworkCleartext (IIS Basic Auth)",
+      "9": "NewCredentials (RunAs /NetOnly)",
+      "10": "RemoteInteractive (Remote Desktop / RDP)",
+      "11": "CachedInteractive (Cached Domain Login)"
+    };
+
+    function extractEventEntities(rawEvent, message, serverHost) {
+      const ed = rawEvent.EventData || {};
+      const cleanVal = (v) => {
+        if (!v) return "";
+        const s = String(v).trim();
+        return (s === "-" || s === "N/A" || s === "null" || s === "undefined") ? "" : s;
+      };
+
+      // 1. Extract Username & Domain
+      let user = cleanVal(ed.TargetUserName) || cleanVal(ed.SubjectUserName) || cleanVal(ed.AccountName) || cleanVal(ed.User) || cleanVal(ed.UserName) || "";
+      let domain = cleanVal(ed.TargetDomainName) || cleanVal(ed.SubjectDomainName) || "";
+
+      if (!user && message) {
+        // Look for "Account Name:" in New Logon / Target / Subject sections
+        const acctMatches = [...message.matchAll(/(?:Account Name|User Name|User|TargetUserName)\s*[:=]\s*([^\r\n\t]+)/gi)]
+          .map(m => m[1].trim())
+          .filter(v => v && v !== "-" && !v.endsWith("$"));
+        if (acctMatches.length > 0) {
+          user = acctMatches[acctMatches.length - 1];
+        } else {
+          const allAcct = [...message.matchAll(/Account Name\s*[:=]\s*([^\r\n\t]+)/gi)].map(m => m[1].trim()).filter(v => v && v !== "-");
+          if (allAcct.length > 0) user = allAcct[allAcct.length - 1];
+        }
+      }
+
+      if (!domain && message) {
+        const domMatches = [...message.matchAll(/Account Domain\s*[:=]\s*([^\r\n\t]+)/gi)].map(m => m[1].trim()).filter(v => v && v !== "-");
+        if (domMatches.length > 0) domain = domMatches[domMatches.length - 1];
+      }
+
+      const fullUser = (domain && user && !user.includes("\\") && !user.includes("@")) ? `${domain}\\${user}` : user;
+
+      // 2. Extract Client Hostname / Workstation Name
+      let workstation = cleanVal(ed.WorkstationName) || cleanVal(ed.Workstation) || cleanVal(ed.ClientName) || cleanVal(ed.CallerComputerName) || "";
+      if (!workstation && message) {
+        const wsMatch = message.match(/(?:Workstation Name|Caller Computer Name|Source Workstation|Client Name|Computer Name)\s*[:=]\s*([^\r\n\t]+)/i);
+        if (wsMatch) workstation = cleanVal(wsMatch[1]);
+      }
+
+      // 3. Extract Source IP Address
+      let sourceIp = cleanVal(ed.IpAddress) || cleanVal(ed.ClientIP) || cleanVal(ed.SourceAddress) || "";
+      if (!sourceIp && message) {
+        const ipMatch = message.match(/(?:Source Network Address|Client Address|IP Address|Source IP)\s*[:=]\s*([0-9a-fA-F:.]+)/i);
+        if (ipMatch) sourceIp = cleanVal(ipMatch[1]);
+      }
+      if (sourceIp === "::1" || sourceIp === "127.0.0.1") {
+        sourceIp = `${sourceIp} (Localhost)`;
+        if (!workstation) workstation = serverHost;
+      }
+
+      // 4. Extract Logon Type
+      let logonTypeRaw = cleanVal(ed.LogonType);
+      if (!logonTypeRaw && message) {
+        const ltMatch = message.match(/Logon Type\s*[:=]\s*(\d+)/i);
+        if (ltMatch) logonTypeRaw = ltMatch[1];
+      }
+      const logonTypeDesc = logonTypeRaw
+        ? (LOGON_TYPE_LABELS[logonTypeRaw] ? `Type ${logonTypeRaw} — ${LOGON_TYPE_LABELS[logonTypeRaw]}` : `Type ${logonTypeRaw}`)
+        : "";
+
+      // 5. Extract Process or Service Name
+      let processOrService = cleanVal(ed.ServiceName) || cleanVal(ed.NewProcessName) || cleanVal(ed.ProcessName) || cleanVal(ed.param1) || "";
+      if (!processOrService && message) {
+        const svcMatch = message.match(/(?:Service Name|New Process Name|Process Name|Faulting application name)\s*[:=]\s*([^\r\n\t,]+)/i)
+          || message.match(/The\s+(.+?)\s+service\s+entered\s+the/i);
+        if (svcMatch) processOrService = cleanVal(svcMatch[1]);
+      }
+      // Avoid using raw LogonType numbers as service name if param1 was numeric
+      if (/^\d+$/.test(processOrService)) processOrService = "";
+
+      return {
+        user: fullUser,
+        workstation,
+        sourceIp,
+        logonType: logonTypeDesc,
+        processOrService
+      };
+    }
+
     function parseWindowsTimestamp(rawTs, fallbackDisplay, rawMessage) {
       let dateObj = null;
       if (rawTs) {
@@ -676,64 +776,137 @@ while ($Listener.IsListening) {
       return `${Math.floor(diffHr / 24)}d ago`;
     }
 
+    /*************************************************************************
+     * 2. EXPANDED WINDOWS SERVER DICTIONARY (LOGON, LOGOFF, RDP, SERVICES, ETC.)
+     *************************************************************************/
     const EVENT_DICTIONARY = {
-      4625: {
-        title: "Failed Login Attempt",
-        severity: "CRITICAL",
-        domain: "Auth & Security",
-        whatHappened: "An authentication attempt failed due to an invalid username or bad password.",
-        whyItMatters: "Repeated 4625 events indicate password-spraying or RDP brute-force activity.",
-        whatToDo: "Inspect the source IP address and account name. Block unknown external IPs on the firewall.",
-        psFix: "Get-WinEvent -FilterHashtable @{LogName='Security';Id=4625} -MaxEvents 20 | Select-Object TimeCreated, Message",
-        googleQuery: "Windows Server Event ID 4625 failed logon brute force mitigation"
-      },
       4624: {
         title: "Successful Account Logon",
         severity: "INFO",
         domain: "Auth & Security",
-        whatHappened: "A user or service authenticated to the server.",
-        whyItMatters: "Standard operational event. Verify Logon Type 10 (RDP) if access occurred outside maintenance hours.",
-        whatToDo: "No action needed for expected sessions.",
-        psFix: "Get-WinEvent -FilterHashtable @{LogName='Security';Id=4624} -MaxEvents 10",
-        googleQuery: "Windows Server Event ID 4624 logon types reference"
+        whatHappened: "A user, administrator, or service successfully logged into this server.",
+        whyItMatters: "Tracks active user and remote desktop (RDP) access. Verify if Logon Type 10 (RDP) or Type 3 (Network) came from an expected workstation.",
+        whatToDo: "Review the extracted Username, Client Hostname, Source IP, and Logon Type.",
+        psFix: "Get-WinEvent -FilterHashtable @{LogName='Security';Id=4624} -MaxEvents 15 | Select-Object TimeCreated, Message",
+        googleQuery: "Windows Server Event ID 4624 logon types audit"
+      },
+      4625: {
+        title: "Failed Account Logon (Bad Password or Unknown User)",
+        severity: "CRITICAL",
+        domain: "Auth & Security",
+        whatHappened: "An authentication attempt failed due to an invalid username or incorrect password.",
+        whyItMatters: "Repeated 4625 events from the same workstation or IP indicate brute-force or password-spraying attacks.",
+        whatToDo: "Inspect the extracted Username, Client Hostname, and Source IP. Block unauthorized external IPs on the firewall.",
+        psFix: "Get-WinEvent -FilterHashtable @{LogName='Security';Id=4625} -MaxEvents 20 | Select-Object TimeCreated, Message",
+        googleQuery: "Windows Server Event ID 4625 failed logon brute force mitigation"
+      },
+      4634: {
+        title: "Account Logged Off (Session Terminated)",
+        severity: "INFO",
+        domain: "Auth & Security",
+        whatHappened: "A user or network session was terminated and logged off from the server.",
+        whyItMatters: "Confirms when a user or network connection ended their session cleanly.",
+        whatToDo: "No action required; use alongside Event 4624 to audit session duration.",
+        psFix: "Get-WinEvent -FilterHashtable @{LogName='Security';Id=4634,4647} -MaxEvents 15",
+        googleQuery: "Windows Server Event ID 4634 account logged off details"
+      },
+      4647: {
+        title: "User Initiated Interactive Logoff",
+        severity: "INFO",
+        domain: "Auth & Security",
+        whatHappened: "A user explicitly clicked Sign Out / Log Off from an interactive or Remote Desktop session.",
+        whyItMatters: "Confirms an interactive user manually signed out of the server.",
+        whatToDo: "No action needed. Correlate with Event 4624 for session tracking.",
+        psFix: "Get-WinEvent -FilterHashtable @{LogName='Security';Id=4647} -MaxEvents 15",
+        googleQuery: "Windows Server Event ID 4647 user initiated logoff"
+      },
+      4648: {
+        title: "Logon Attempt Using Explicit Credentials (RunAs)",
+        severity: "WARNING",
+        domain: "Auth & Security",
+        whatHappened: "A user or process logged on specifying explicit alternate credentials (such as RunAs or scheduled task).",
+        whyItMatters: "Shows lateral movement or an admin elevating privileges to another account.",
+        whatToDo: "Verify both the Subject User and Target User in the event details.",
+        psFix: "Get-WinEvent -FilterHashtable @{LogName='Security';Id=4648} -MaxEvents 15",
+        googleQuery: "Windows Server Event ID 4648 explicit credentials audit"
+      },
+      4778: {
+        title: "Remote Desktop (RDP) Session Reconnected",
+        severity: "INFO",
+        domain: "Auth & Security",
+        whatHappened: "A user reconnected to an existing Remote Desktop session on the server.",
+        whyItMatters: "Tracks active RDP administrative sessions and the client workstation name/IP.",
+        whatToDo: "Verify the connecting user and client hostname.",
+        psFix: "quser",
+        googleQuery: "Windows Server Event ID 4778 session reconnected to Window Station"
+      },
+      4779: {
+        title: "Remote Desktop (RDP) Session Disconnected without Logoff",
+        severity: "INFO",
+        domain: "Auth & Security",
+        whatHappened: "A user closed their Remote Desktop window without signing out (session remains active in background).",
+        whyItMatters: "Disconnected RDP sessions continue consuming server RAM and can lock accounts if the user changes their password later.",
+        whatToDo: "Run 'quser' to view disconnected sessions and log off stale sessions if needed.",
+        psFix: "quser",
+        googleQuery: "Windows Server Event ID 4779 session disconnected Window Station"
       },
       4740: {
         title: "User Account Locked Out",
         severity: "WARNING",
         domain: "Auth & Security",
-        whatHappened: "An Active Directory or local user account exceeded the bad password threshold and was locked.",
-        whyItMatters: "Causes user downtime; frequently triggered by stale credentials cached in disconnected RDP sessions or mobile devices.",
-        whatToDo: "Check the Caller Computer Name field to locate the source machine, then unlock the account.",
+        whatHappened: "A user account exceeded the failed password threshold and was automatically locked.",
+        whyItMatters: "Blocks the user from working; check the Client Hostname (Caller Computer Name) to see which machine caused the lockout.",
+        whatToDo: "Clear stale credentials on the Caller Computer Name, then unlock the user account.",
         psFix: "Unlock-ADAccount -Identity 'USERNAME' -Confirm:$false",
         googleQuery: "Windows Server Event ID 4740 account locked out source computer fix"
       },
       4720: {
-        title: "User Account Created",
+        title: "New User Account Created",
         severity: "WARNING",
         domain: "Auth & Security",
-        whatHappened: "A new local or domain user account was provisioned.",
+        whatHappened: "A new local or Active Directory user account was provisioned on the server.",
         whyItMatters: "Unscheduled account creation can indicate unauthorized persistence.",
         whatToDo: "Confirm the account was authorized by an administrator.",
         psFix: "Get-LocalUser | Select-Object Name, Enabled, LastLogon",
         googleQuery: "Windows Server Event ID 4720 new user account audit"
       },
-      4732: {
-        title: "Account Added to Security Group",
+      4726: {
+        title: "User Account Deleted",
         severity: "WARNING",
         domain: "Auth & Security",
-        whatHappened: "A user was added to a security-enabled local group (such as Administrators).",
-        whyItMatters: "Elevates account permissions on the host.",
+        whatHappened: "A user account was deleted from the server or domain.",
+        whyItMatters: "Important for security compliance and offboarding audits.",
+        whatToDo: "Verify that the account removal was approved.",
+        psFix: "Get-WinEvent -FilterHashtable @{LogName='Security';Id=4726} -MaxEvents 10",
+        googleQuery: "Windows Server Event ID 4726 user account deleted audit"
+      },
+      4732: {
+        title: "User Added to Security Group",
+        severity: "WARNING",
+        domain: "Auth & Security",
+        whatHappened: "An account was added to a local security group (such as Administrators).",
+        whyItMatters: "Elevates user privileges on this host.",
         whatToDo: "Review the target group and verify change approval.",
         psFix: "Get-LocalGroupMember -Group 'Administrators'",
         googleQuery: "Windows Server Event ID 4732 group membership change"
+      },
+      4688: {
+        title: "New Process / Executable Launched",
+        severity: "INFO",
+        domain: "Auth & Security",
+        whatHappened: "A program or command-line executable was started on the server.",
+        whyItMatters: "Provides an audit trail of every binary run by users or services.",
+        whatToDo: "Review the Process Name and Creator Username.",
+        psFix: "Get-Process | Sort-Object StartTime -Descending -ErrorAction SilentlyContinue | Select-Object -First 15 Name, Id, Path",
+        googleQuery: "Windows Server Event ID 4688 new process created audit"
       },
       1102: {
         title: "Security Audit Log Cleared",
         severity: "CRITICAL",
         domain: "Auth & Security",
-        whatHappened: "The Windows Security event log was purged.",
+        whatHappened: "The Windows Security event log was manually wiped.",
         whyItMatters: "Audit logs are commonly cleared to hide unauthorized activity.",
-        whatToDo: "Identify the account listed under SubjectUserName and verify server integrity.",
+        whatToDo: "Identify the account listed under User and verify server integrity immediately.",
         psFix: "Get-WinEvent -FilterHashtable @{LogName='Security';Id=1102}",
         googleQuery: "Windows Server Event ID 1102 audit log cleared investigation"
       },
@@ -763,42 +936,12 @@ while ($Listener.IsListening) {
         domain: "Disk & Kernel",
         whatHappened: "A user or system process initiated a controlled reboot or shutdown.",
         whyItMatters: "Documents planned maintenance or Windows Update reboots.",
-        whatToDo: "Review the initiating account and reason code in the message.",
+        whatToDo: "Review the initiating User and process in the event details.",
         psFix: "Get-WinEvent -FilterHashtable @{LogName='System';Id=1074} -MaxEvents 5",
         googleQuery: "Windows Server Event ID 1074 restart reason codes"
       },
-      55: {
-        title: "NTFS File System Corruption",
-        severity: "CRITICAL",
-        domain: "Disk & Kernel",
-        whatHappened: "The file system structure on a volume was found to be corrupt.",
-        whyItMatters: "Can lead to volume unmounting or data loss.",
-        whatToDo: "Schedule a maintenance window for chkdsk and inspect physical disk SMART/RAID health.",
-        psFix: "Get-PhysicalDisk | Select-Object DeviceId, FriendlyName, OperationalStatus, HealthStatus",
-        googleQuery: "Windows Server Event ID 55 NTFS file system corrupt fix"
-      },
-      129: {
-        title: "StorPort Controller Reset",
-        severity: "WARNING",
-        domain: "Disk & Kernel",
-        whatHappened: "The storage adapter stopped responding to I/O requests and was reset.",
-        whyItMatters: "Causes high disk latency and freezes applications or databases.",
-        whatToDo: "Verify storage driver/firmware versions and SAN/RAID controller health.",
-        psFix: "Get-PhysicalDisk | Get-StorageReliabilityCounter | Select-Object DeviceId, ReadErrorsTotal, WriteErrorsTotal",
-        googleQuery: "Windows Server Event ID 129 StorPort reset latency fix"
-      },
-      153: {
-        title: "Disk I/O Operation Retried",
-        severity: "WARNING",
-        domain: "Disk & Kernel",
-        whatHappened: "An I/O request timed out and was retried by the disk stack.",
-        whyItMatters: "Indicates storage saturation or a degrading drive.",
-        whatToDo: "Monitor disk queue lengths and check storage array logs.",
-        psFix: "Get-Counter '\\PhysicalDisk(*)\\Avg. Disk sec/Transfer'",
-        googleQuery: "Windows Server Event ID 153 disk IO retry occurred fix"
-      },
       7036: {
-        title: "Service State Changed",
+        title: "Windows Service State Changed",
         severity: "WARNING",
         domain: "Services & GPO",
         whatHappened: "A Windows service transitioned between Running and Stopped states.",
@@ -817,45 +960,15 @@ while ($Listener.IsListening) {
         psFix: "Get-Service | Where-Object {$_.Status -ne 'Running' -and $_.StartType -eq 'Automatic'}",
         googleQuery: "Windows Server Event ID 7031 service terminated unexpectedly fix"
       },
-      7034: {
-        title: "Service Crashed Without Recovery",
-        severity: "CRITICAL",
-        domain: "Services & GPO",
-        whatHappened: "A Windows service terminated unexpectedly and did not restart.",
-        whyItMatters: "The service remains offline until started manually.",
-        whatToDo: "Start the service and configure recovery restart rules in services.msc.",
-        psFix: "Get-WinEvent -FilterHashtable @{LogName='System';Id=7034} -MaxEvents 10",
-        googleQuery: "Windows Server Event ID 7034 service crashed fix"
-      },
-      7000: {
-        title: "Service Failed to Start",
-        severity: "CRITICAL",
-        domain: "Services & GPO",
-        whatHappened: "The Service Control Manager could not launch a configured service.",
-        whyItMatters: "Often caused by an expired service account password or missing binary.",
-        whatToDo: "Verify the service logon credentials and executable path.",
-        psFix: "Get-CimInstance Win32_Service | Where-Object {$_.StartMode -eq 'Auto' -and $_.State -ne 'Running'} | Select-Object Name, StartName, ExitCode",
-        googleQuery: "Windows Server Event ID 7000 service failed to start logon fix"
-      },
       7045: {
-        title: "New Service Installed",
+        title: "New Windows Service Installed",
         severity: "WARNING",
         domain: "Services & GPO",
-        whatHappened: "A new service was registered with the Service Control Manager.",
+        whatHappened: "A new background service was registered with the Service Control Manager.",
         whyItMatters: "Verify legitimacy; unauthorized tools often register system services.",
         whatToDo: "Review the service binary path and account context.",
         psFix: "Get-WinEvent -FilterHashtable @{LogName='System';Id=7045} -MaxEvents 10 | Select-Object TimeCreated, Message",
         googleQuery: "Windows Server Event ID 7045 new service installed audit"
-      },
-      1014: {
-        title: "DNS Resolution Timeout",
-        severity: "WARNING",
-        domain: "Network & Firewall",
-        whatHappened: "DNS query for a hostname timed out across configured DNS servers.",
-        whyItMatters: "Impacts domain authentication, GPO processing, and outbound connections.",
-        whatToDo: "Check NIC DNS settings and test connectivity to DNS forwarders.",
-        psFix: "Resolve-DnsName google.com; Get-DnsClientServerAddress -AddressFamily IPv4",
-        googleQuery: "Windows Server Event ID 1014 DNS client timeout fix"
       },
       2004: {
         title: "Low Virtual Memory (Resource Exhaustion)",
@@ -876,16 +989,6 @@ while ($Listener.IsListening) {
         whatToDo: "Inspect the faulting module path and exception code in the event details.",
         psFix: "Get-WinEvent -FilterHashtable @{LogName='Application';Id=1000} -MaxEvents 10 | Select-Object TimeCreated, Message",
         googleQuery: "Windows Server Event ID 1000 Application Error faulting module fix"
-      },
-      10016: {
-        title: "DCOM Permission Notice",
-        severity: "INFO",
-        domain: "Services & GPO",
-        whatHappened: "A local process requested DCOM activation without explicit ACL entry.",
-        whyItMatters: "Expected Windows behavior; does not impact system functionality.",
-        whatToDo: "Safe to ignore per Microsoft documentation.",
-        psFix: "# Event 10016 is benign by design.",
-        googleQuery: "Windows Server Event ID 10016 DistributedCOM Microsoft"
       }
     };
 
@@ -916,6 +1019,9 @@ while ($Listener.IsListening) {
         message
       );
 
+      // Extract User, Client Workstation, Source IP, Logon Type, Service/Process
+      const entities = extractEventEntities(rawEvent, message, machine);
+
       let detectedHex = "";
       let hexExplanation = "";
       const hexMatch = message.match(/0x[0-9a-fA-F]{8}/);
@@ -924,8 +1030,25 @@ while ($Listener.IsListening) {
         hexExplanation = HEX_ERROR_CODES[detectedHex] || `Hex Code (${detectedHex})`;
       }
 
+      // Build context suffix for titles & plain-English descriptions
+      const userContextParts = [];
+      if (entities.user) userContextParts.push(`User: ${entities.user}`);
+      if (entities.workstation) userContextParts.push(`Client Host: ${entities.workstation}`);
+      if (entities.sourceIp) userContextParts.push(`IP: ${entities.sourceIp}`);
+      if (entities.logonType) userContextParts.push(entities.logonType);
+      if (entities.processOrService && !entities.logonType) userContextParts.push(`Target: ${entities.processOrService}`);
+      const contextSummary = userContextParts.length > 0 ? ` [${userContextParts.join(" • ")}]` : "";
+
       if (EVENT_DICTIONARY[eventId]) {
         const entry = EVENT_DICTIONARY[eventId];
+        let dynamicTitle = entry.title;
+        if (entities.user) {
+          dynamicTitle += ` — ${entities.user}`;
+          if (entities.workstation) dynamicTitle += ` (from ${entities.workstation})`;
+        } else if (entities.processOrService) {
+          dynamicTitle += ` — ${entities.processOrService}`;
+        }
+
         return {
           uid: `${machine}|${channel}|${recordId}|${eventId}`,
           eventId,
@@ -934,6 +1057,7 @@ while ($Listener.IsListening) {
           provider,
           machine,
           serverIp,
+          entities,
           timestamp: parsedTime.isoString,
           epochMs: parsedTime.epochMs,
           datePart: parsedTime.datePart,
@@ -941,8 +1065,8 @@ while ($Listener.IsListening) {
           fullDateDisplay: parsedTime.fullDisplay,
           severity: entry.severity,
           domain: entry.domain,
-          title: entry.title,
-          whatHappened: entry.whatHappened + (hexExplanation ? ` [${hexExplanation}]` : ""),
+          title: dynamicTitle,
+          whatHappened: `${entry.whatHappened}${contextSummary}${hexExplanation ? ` [${hexExplanation}]` : ""}`,
           whyItMatters: entry.whyItMatters,
           whatToDo: entry.whatToDo,
           psFix: entry.psFix,
@@ -960,7 +1084,7 @@ while ($Listener.IsListening) {
 
       let domain = "Services & GPO";
       const combined = `${channel} ${provider} ${message}`.toLowerCase();
-      if (/security|kerberos|logon|login|ntlm|account|audit|privilege|active directory|sam/.test(combined)) {
+      if (/security|kerberos|logon|logoff|login|ntlm|account|audit|privilege|active directory|sam/.test(combined)) {
         domain = "Auth & Security";
       } else if (/disk|ntfs|storport|kernel|power|volsnap|raid|partmgr|memory|whea/.test(combined)) {
         domain = "Disk & Kernel";
@@ -973,7 +1097,7 @@ while ($Listener.IsListening) {
       }
 
       const cleanFirstLine = message.split(/\r?\n/).map(s => s.trim()).find(s => s.length > 6) || `Event ID ${eventId} from ${provider}.`;
-      const shortHeadline = cleanFirstLine.length > 90 ? cleanFirstLine.slice(0, 90) + "..." : cleanFirstLine;
+      const shortHeadline = cleanFirstLine.length > 85 ? cleanFirstLine.slice(0, 85) + "..." : cleanFirstLine;
 
       return {
         uid: `${machine}|${channel}|${recordId}|${eventId}`,
@@ -983,6 +1107,7 @@ while ($Listener.IsListening) {
         provider,
         machine,
         serverIp,
+        entities,
         timestamp: parsedTime.isoString,
         epochMs: parsedTime.epochMs,
         datePart: parsedTime.datePart,
@@ -990,8 +1115,8 @@ while ($Listener.IsListening) {
         fullDateDisplay: parsedTime.fullDisplay,
         severity,
         domain,
-        title: `${provider} (ID ${eventId}): ${shortHeadline}`,
-        whatHappened: `${cleanFirstLine}${hexExplanation ? ` — ${hexExplanation}.` : ""}`,
+        title: `${provider} (ID ${eventId})${entities.user ? ` — ${entities.user}` : ""}: ${shortHeadline}`,
+        whatHappened: `${cleanFirstLine}${contextSummary}${hexExplanation ? ` — ${hexExplanation}.` : ""}`,
         whyItMatters: severity === "CRITICAL"
           ? `Logged as an error by '${provider}' in the ${channel} channel.`
           : severity === "WARNING"
@@ -1011,7 +1136,6 @@ while ($Listener.IsListening) {
       window.open(`https://www.google.com/search?q=${encodeURIComponent(query)}`, "_blank", "noopener,noreferrer");
     }
 
-    /* THEME MANAGEMENT */
     function initTheme() {
       const saved = localStorage.getItem(STORAGE_KEY_THEME) || "dark";
       applyTheme(saved);
@@ -1033,7 +1157,6 @@ while ($Listener.IsListening) {
       localStorage.setItem(STORAGE_KEY_THEME, mode);
     }
 
-    /* CHARTS */
     let severityChartInstance = null;
     let topEventsChartInstance = null;
 
@@ -1097,7 +1220,6 @@ while ($Listener.IsListening) {
       document.getElementById("kpiReportedCount").textContent = state.reportedUids.size.toLocaleString();
       document.getElementById("kpiSpaceSaved").textContent = `${(state.spaceSavedBytes / 1024).toFixed(1)} KB`;
 
-      // Update Server dropdown filter
       const serverSelect = document.getElementById("serverFilter");
       const currentVal = serverSelect.value;
       const uniqueHosts = Array.from(new Set(state.logs.map(l => l.machine)));
@@ -1114,7 +1236,7 @@ while ($Listener.IsListening) {
       } else if (crit > 0) {
         sitrepIcon.textContent = "ALT";
         sitrepText.className = "text-sm lg:text-base font-bold text-rose-600 dark:text-rose-400 mt-1";
-        sitrepText.textContent = `${crit} Critical alert(s) and ${warn} Warning(s) across ${uniqueHosts.length || 1} server(s). Use the Fix buttons to launch targeted remediation searches.`;
+        sitrepText.textContent = `${crit} Critical alert(s) and ${warn} Warning(s) across ${uniqueHosts.length || 1} server(s). Usernames, client hostnames, and IPs are shown on each event.`;
       } else if (warn > 0) {
         sitrepIcon.textContent = "WRN";
         sitrepText.className = "text-sm lg:text-base font-semibold text-amber-600 dark:text-amber-300 mt-1";
@@ -1143,7 +1265,6 @@ while ($Listener.IsListening) {
       }
     }
 
-    /* MULTI-SERVER FLEET MANAGEMENT */
     function saveServers() {
       localStorage.setItem(STORAGE_KEY_SERVERS, JSON.stringify(state.servers));
       document.getElementById("serverTotalCount").textContent = state.servers.length;
@@ -1300,7 +1421,6 @@ while ($Listener.IsListening) {
       return added;
     }
 
-    /* LIVE AUTO-SYNC TIMER */
     function configureAutoSync(seconds) {
       if (state.autoSyncTimerId) {
         clearInterval(state.autoSyncTimerId);
@@ -1328,7 +1448,6 @@ while ($Listener.IsListening) {
       }, 1000);
     }
 
-    /* EVENT FEED & INSPECTOR RENDERING */
     function getFilteredLogs() {
       const q = document.getElementById("searchInput").value.trim().toLowerCase();
       const srv = document.getElementById("serverFilter").value;
@@ -1360,11 +1479,33 @@ while ($Listener.IsListening) {
         if (rep === "REPORTED" && !isReported) return false;
 
         if (q) {
-          const hay = `${item.eventId} ${item.title} ${item.whatHappened} ${item.provider} ${item.channel} ${item.machine} ${item.serverIp} ${item.fullDateDisplay} ${item.rawMessage}`.toLowerCase();
+          const e = item.entities || {};
+          const hay = `${item.eventId} ${item.title} ${item.whatHappened} ${item.provider} ${item.channel} ${item.machine} ${item.serverIp} ${e.user} ${e.workstation} ${e.sourceIp} ${e.logonType} ${e.processOrService} ${item.fullDateDisplay} ${item.rawMessage}`.toLowerCase();
           if (!hay.includes(q)) return false;
         }
         return true;
       });
+    }
+
+    function renderEntityPills(entities) {
+      if (!entities) return "";
+      const pills = [];
+      if (entities.user) {
+        pills.push(`<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-blue-500/15 text-blue-700 dark:text-blue-300 border border-blue-500/30 font-mono">👤 User: ${escapeHtml(entities.user)}</span>`);
+      }
+      if (entities.workstation) {
+        pills.push(`<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-purple-500/15 text-purple-700 dark:text-purple-300 border border-purple-500/30 font-mono">💻 Client Host: ${escapeHtml(entities.workstation)}</span>`);
+      }
+      if (entities.sourceIp) {
+        pills.push(`<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-amber-500/15 text-amber-700 dark:text-amber-300 border border-amber-500/30 font-mono">🌐 Source IP: ${escapeHtml(entities.sourceIp)}</span>`);
+      }
+      if (entities.logonType) {
+        pills.push(`<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-medium bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30 font-mono">🔑 ${escapeHtml(entities.logonType)}</span>`);
+      }
+      if (entities.processOrService) {
+        pills.push(`<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-medium bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono">⚙️ ${escapeHtml(entities.processOrService)}</span>`);
+      }
+      return pills.length ? `<div class="flex flex-wrap items-center gap-1.5 mt-2">${pills.join("")}</div>` : "";
     }
 
     function renderLogStream() {
@@ -1441,9 +1582,10 @@ while ($Listener.IsListening) {
             </button>
           </div>
           <h3 class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white mt-2">${escapeHtml(item.title)}</h3>
-          <p class="text-xs text-slate-600 dark:text-slate-300 mt-1 line-clamp-2">${escapeHtml(item.whatHappened)}</p>
+          ${renderEntityPills(item.entities)}
+          <p class="text-xs text-slate-600 dark:text-slate-300 mt-1.5 line-clamp-2">${escapeHtml(item.whatHappened)}</p>
           <div class="flex flex-wrap items-center justify-between text-[11px] text-slate-500 dark:text-slate-400 mt-2 font-mono gap-2">
-            <span>Host: <strong class="text-slate-800 dark:text-slate-200">${escapeHtml(item.machine)}</strong> (${escapeHtml(item.serverIp)}) • Provider: ${escapeHtml(item.provider)}</span>
+            <span>Server Host: <strong class="text-slate-800 dark:text-slate-200">${escapeHtml(item.machine)}</strong> (${escapeHtml(item.serverIp)}) • Provider: ${escapeHtml(item.provider)}</span>
             <span>#${escapeHtml(item.recordId)}</span>
           </div>
         `;
@@ -1483,6 +1625,8 @@ while ($Listener.IsListening) {
         ? "bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold"
         : "bg-blue-600 hover:bg-blue-500 text-white";
 
+      const e = item.entities || {};
+
       content.innerHTML = `
         <div class="space-y-4">
           <div>
@@ -1493,12 +1637,27 @@ while ($Listener.IsListening) {
               <span>•</span>
               <span class="text-emerald-600 dark:text-emerald-400 font-semibold">${escapeHtml(getRelativeTimeAgo(item.epochMs))}</span>
             </div>
-            <div class="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400 font-mono">
-              <span>Host: <strong class="text-slate-900 dark:text-white">${escapeHtml(item.machine)} (${escapeHtml(item.serverIp)})</strong></span>
-              <span>•</span>
-              <span>Source: <strong class="text-slate-900 dark:text-white">${escapeHtml(item.provider)}</strong></span>
-            </div>
             <h3 class="text-base font-extrabold text-slate-900 dark:text-white mt-1">${escapeHtml(item.title)}</h3>
+          </div>
+
+          <!-- EXTRACTED USER, CLIENT HOSTNAME & SESSION TELEMETRY GRID -->
+          <div class="grid grid-cols-2 gap-2 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl p-3 text-xs font-mono">
+            <div>
+              <span class="text-[10px] uppercase text-slate-400 block">Account / User</span>
+              <strong class="text-blue-600 dark:text-blue-400 break-all">${escapeHtml(e.user || "System / N/A")}</strong>
+            </div>
+            <div>
+              <span class="text-[10px] uppercase text-slate-400 block">Client Workstation / Host</span>
+              <strong class="text-purple-600 dark:text-purple-300 break-all">${escapeHtml(e.workstation || item.machine)}</strong>
+            </div>
+            <div>
+              <span class="text-[10px] uppercase text-slate-400 block">Source / Client IP</span>
+              <strong class="text-amber-600 dark:text-amber-300 break-all">${escapeHtml(e.sourceIp || item.serverIp)}</strong>
+            </div>
+            <div>
+              <span class="text-[10px] uppercase text-slate-400 block">Session / Target</span>
+              <strong class="text-emerald-600 dark:text-emerald-300 break-all">${escapeHtml(e.logonType || e.processOrService || item.provider)}</strong>
+            </div>
           </div>
 
           <button id="inspectorGoogleFixBtn" class="w-full py-2.5 px-4 rounded-xl text-xs font-bold flex items-center justify-center gap-2 transition ${actionBtnClass}">
@@ -1543,7 +1702,6 @@ while ($Listener.IsListening) {
       });
     }
 
-    /* INCREMENTAL MULTI-FORMAT REPORT EXPORTER (PDF, HTML, CSV) */
     function prepareReportModal() {
       const unreported = state.logs.filter(l => !state.reportedUids.has(l.uid));
       const skipped = state.logs.filter(l => state.reportedUids.has(l.uid));
@@ -1572,7 +1730,6 @@ while ($Listener.IsListening) {
         return;
       }
 
-      // Mark as reported
       unreportedLogs.forEach(l => state.reportedUids.add(l.uid));
       state.spaceSavedBytes += skippedBytes;
       localStorage.setItem(STORAGE_KEY_REPORTED, JSON.stringify(Array.from(state.reportedUids)));
@@ -1583,10 +1740,15 @@ while ($Listener.IsListening) {
       const warnCount = unreportedLogs.filter(l => l.severity === "WARNING").length;
 
       if (format === "CSV") {
-        const headers = ["Date", "Time", "Server", "IP", "Severity", "EventID", "Channel", "Provider", "Summary", "Remediation"];
-        const rows = unreportedLogs.map(l => [
-          l.datePart, l.timePart, l.machine, l.serverIp, l.severity, l.eventId, l.channel, l.provider, l.whatHappened, l.whatToDo
-        ].map(v => `"${String(v ?? "").replace(/"/g, '""')}"`).join(","));
+        const headers = ["Date", "Time", "ServerHost", "ServerIP", "Severity", "EventID", "Channel", "User", "ClientHostname", "SourceIP", "LogonTypeOrService", "Summary", "Remediation"];
+        const rows = unreportedLogs.map(l => {
+          const e = l.entities || {};
+          return [
+            l.datePart, l.timePart, l.machine, l.serverIp, l.severity, l.eventId, l.channel,
+            e.user || "", e.workstation || "", e.sourceIp || "", e.logonType || e.processOrService || "",
+            l.whatHappened, l.whatToDo
+          ].map(v => `"${String(v ?? "").replace(/"/g, '""')}"`).join(",");
+        });
         const csvContent = "\uFEFF" + [headers.join(","), ...rows].join("\r\n");
         const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
         const a = document.createElement("a");
@@ -1617,40 +1779,33 @@ while ($Listener.IsListening) {
               <div><strong>New Events:</strong> ${unreportedLogs.length} (Skipped ${alreadyReportedLogs.length} duplicates)</div>
             </div>
           </div>
-          <div style="display:flex; gap:12px; margin-bottom:16px;">
-            <div style="flex:1; background:#f8fafc; border:1px solid #e2e8f0; padding:10px; border-radius:8px;">
-              <div style="font-size:10px; color:#64748b;">TOTAL NEW EVENTS</div>
-              <div style="font-size:18px; font-weight:bold;">${unreportedLogs.length}</div>
-            </div>
-            <div style="flex:1; background:#fff1f2; border:1px solid #fecdd3; padding:10px; border-radius:8px;">
-              <div style="font-size:10px; color:#be123c;">CRITICAL</div>
-              <div style="font-size:18px; font-weight:bold; color:#e11d48;">${critCount}</div>
-            </div>
-            <div style="flex:1; background:#fffbeb; border:1px solid #fde68a; padding:10px; border-radius:8px;">
-              <div style="font-size:10px; color:#b45309;">WARNINGS</div>
-              <div style="font-size:18px; font-weight:bold; color:#d97706;">${warnCount}</div>
-            </div>
-          </div>
-          <table style="width:100%; border-collapse:collapse; font-size:10px;">
+          <table style="width:100%; border-collapse:collapse; font-size:9.5px;">
             <thead>
               <tr style="background:#1e293b; color:#ffffff;">
-                <th style="padding:7px; text-align:left;">Date &amp; Time</th>
-                <th style="padding:7px; text-align:left;">Host</th>
-                <th style="padding:7px; text-align:left;">Severity</th>
-                <th style="padding:7px; text-align:left;">Event ID</th>
-                <th style="padding:7px; text-align:left;">Summary &amp; Action</th>
+                <th style="padding:6px; text-align:left;">Date &amp; Time</th>
+                <th style="padding:6px; text-align:left;">Server</th>
+                <th style="padding:6px; text-align:left;">Severity / ID</th>
+                <th style="padding:6px; text-align:left;">User &amp; Client Host</th>
+                <th style="padding:6px; text-align:left;">Summary &amp; Action</th>
               </tr>
             </thead>
             <tbody>
-              ${unreportedLogs.map((l, i) => `
+              ${unreportedLogs.map((l, i) => {
+                const e = l.entities || {};
+                return `
                 <tr style="background:${i % 2 === 0 ? '#ffffff' : '#f8fafc'}; border-bottom:1px solid #e2e8f0;">
                   <td style="padding:6px; white-space:nowrap;"><strong>${escapeHtml(l.datePart)}</strong><br>${escapeHtml(l.timePart)}</td>
-                  <td style="padding:6px;">${escapeHtml(l.machine)}<br><span style="color:#64748b;">${escapeHtml(l.channel)}</span></td>
-                  <td style="padding:6px; font-weight:bold; color:${l.severity === 'CRITICAL' ? '#e11d48' : l.severity === 'WARNING' ? '#d97706' : '#059669'};">${l.severity}</td>
-                  <td style="padding:6px; font-weight:bold;">${l.eventId}</td>
+                  <td style="padding:6px;"><strong>${escapeHtml(l.machine)}</strong><br><span style="color:#64748b;">${escapeHtml(l.channel)}</span></td>
+                  <td style="padding:6px; font-weight:bold; color:${l.severity === 'CRITICAL' ? '#e11d48' : l.severity === 'WARNING' ? '#d97706' : '#059669'};">${l.severity}<br>ID ${l.eventId}</td>
+                  <td style="padding:6px;">
+                    ${e.user ? `<div><strong>User:</strong> ${escapeHtml(e.user)}</div>` : ""}
+                    ${e.workstation ? `<div><strong>Client:</strong> ${escapeHtml(e.workstation)}</div>` : ""}
+                    ${e.sourceIp ? `<div><strong>IP:</strong> ${escapeHtml(e.sourceIp)}</div>` : ""}
+                    ${e.logonType ? `<div>${escapeHtml(e.logonType)}</div>` : ""}
+                  </td>
                   <td style="padding:6px;"><strong>${escapeHtml(l.title)}</strong><br>${escapeHtml(l.whatHappened)}<br><em style="color:#475569;">Action: ${escapeHtml(l.whatToDo)}</em></td>
-                </tr>
-              `).join("")}
+                </tr>`;
+              }).join("")}
             </tbody>
           </table>
         `;
@@ -1712,7 +1867,7 @@ while ($Listener.IsListening) {
     <div class="card"><div class="card-label">Duplicates Skipped</div><div class="card-val" style="color:#34d399">${skippedCount}</div></div>
   </div>
   <div class="controls">
-    <input id="q" type="text" placeholder="Filter report rows by keyword, Event ID, or host..." oninput="filterRows()" />
+    <input id="q" type="text" placeholder="Filter by Username, Client Host, IP, Event ID..." oninput="filterRows()" />
     <select id="sev" onchange="filterRows()">
       <option value="ALL">All Severities</option>
       <option value="CRITICAL">Critical</option>
@@ -1724,26 +1879,33 @@ while ($Listener.IsListening) {
     <thead>
       <tr>
         <th>Date &amp; Time</th>
-        <th>Host</th>
+        <th>Server</th>
         <th>Severity</th>
         <th>Event ID</th>
-        <th>Channel / Source</th>
+        <th>User / Client Host / IP</th>
         <th>Summary</th>
         <th>Action</th>
       </tr>
     </thead>
     <tbody id="rows">
-      ${logs.map(l => `
+      ${logs.map(l => {
+        const e = l.entities || {};
+        return `
         <tr data-sev="${l.severity}">
           <td style="white-space:nowrap;"><strong>${escapeHtml(l.datePart)}</strong><br>${escapeHtml(l.timePart)}</td>
-          <td><strong>${escapeHtml(l.machine)}</strong><br><small style="color:#9ca3af">${escapeHtml(l.serverIp)}</small></td>
+          <td><strong>${escapeHtml(l.machine)}</strong><br><small style="color:#9ca3af">${escapeHtml(l.channel)}</small></td>
           <td class="${l.severity}">${l.severity}</td>
           <td><strong>${l.eventId}</strong></td>
-          <td>${escapeHtml(l.channel)}<br><small style="color:#9ca3af">${escapeHtml(l.provider)}</small></td>
+          <td>
+            ${e.user ? `<div><strong>User:</strong> ${escapeHtml(e.user)}</div>` : ""}
+            ${e.workstation ? `<div><strong>Client:</strong> ${escapeHtml(e.workstation)}</div>` : ""}
+            ${e.sourceIp ? `<div><strong>IP:</strong> ${escapeHtml(e.sourceIp)}</div>` : ""}
+            ${e.logonType ? `<div><small style="color:#34d399">${escapeHtml(e.logonType)}</small></div>` : ""}
+          </td>
           <td><strong>${escapeHtml(l.title)}</strong><br>${escapeHtml(l.whatHappened)}</td>
           <td>${escapeHtml(l.whatToDo)}</td>
-        </tr>
-      `).join("")}
+        </tr>`;
+      }).join("")}
     </tbody>
   </table>
   <script>
@@ -1761,13 +1923,8 @@ while ($Listener.IsListening) {
 </html>`;
     }
 
-    function openModal(id) {
-      document.getElementById(id)?.classList.remove("hidden");
-    }
-
-    function closeModal(id) {
-      document.getElementById(id)?.classList.add("hidden");
-    }
+    function openModal(id) { document.getElementById(id)?.classList.remove("hidden"); }
+    function closeModal(id) { document.getElementById(id)?.classList.add("hidden"); }
 
     function showToast(msg, type = "info") {
       const container = document.getElementById("toastContainer");
@@ -1803,13 +1960,11 @@ while ($Listener.IsListening) {
       updateChartsAndKpis();
       renderLogStream();
 
-      // Theme toggle
       document.getElementById("btnThemeToggle").addEventListener("click", () => {
         const isDark = document.documentElement.classList.contains("dark");
         applyTheme(isDark ? "light" : "dark");
       });
 
-      // Auto-Sync toggle
       document.getElementById("autoSyncSelect").addEventListener("change", (e) => {
         const sec = Number(e.target.value);
         configureAutoSync(sec);
@@ -1821,7 +1976,6 @@ while ($Listener.IsListening) {
         }
       });
 
-      // Modals & Toolbar
       document.getElementById("btnManageServers").addEventListener("click", () => {
         renderServersModalList();
         openModal("serversModal");
@@ -1835,12 +1989,10 @@ while ($Listener.IsListening) {
       });
       document.getElementById("btnOpenReportModal").addEventListener("click", prepareReportModal);
 
-      // Export Format buttons
       document.querySelectorAll(".export-format-btn").forEach(btn => {
         btn.addEventListener("click", () => executeIncrementalExport(btn.getAttribute("data-export-format")));
       });
 
-      // Add Server Node
       document.getElementById("btnAddServerNode").addEventListener("click", () => {
         const nameInput = document.getElementById("newServerName");
         const urlInput = document.getElementById("newServerUrl");
@@ -1867,7 +2019,6 @@ while ($Listener.IsListening) {
         showToast(`Added ${name} (${url}) to fleet.`, "success");
       });
 
-      // Copy Agent Script
       document.getElementById("btnCopyPsAgent").addEventListener("click", () => {
         navigator.clipboard.writeText(document.getElementById("psAgentCodeBlock").textContent);
         showToast("PowerShell script copied.", "success");
@@ -1889,7 +2040,6 @@ while ($Listener.IsListening) {
         });
       });
 
-      // Manual Decoder
       document.getElementById("btnTranslateAndAdd").addEventListener("click", () => {
         const rawText = document.getElementById("manualMessageInput").value.trim();
         let evId = Number(document.getElementById("manualEventIdInput").value);
@@ -1900,7 +2050,7 @@ while ($Listener.IsListening) {
           const xmlIdMatch = rawText.match(/<EventID[^>]*>(\d+)<\/EventID>/i) || rawText.match(/Event\s*ID\s*[:=]?\s*(\d+)/i);
           if (xmlIdMatch) evId = Number(xmlIdMatch[1]);
         }
-        if (!evId) evId = 1000;
+        if (!evId) evId = 4624;
 
         const ipMatch = hostInput.match(/(\d{1,3}(?:\.\d{1,3}){3})/);
         const hostClean = hostInput.replace(/\s*\(.*?\)/, "");
@@ -1922,10 +2072,9 @@ while ($Listener.IsListening) {
         renderLogStream();
         renderInspector(item);
         closeModal("rawTranslatorModal");
-        showToast(`Event ID ${evId} decoded.`, "success");
+        showToast(`Event ID ${evId} decoded with entity details.`, "success");
       });
 
-      // File Import
       document.getElementById("fileUploadInput").addEventListener("change", (e) => {
         const file = e.target.files[0];
         if (!file) return;
